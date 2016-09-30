@@ -158,3 +158,11 @@ pre {
 .image-zoom:checked + label > .lightbox {
     display: block !important;
 }
+
+.image-zoom + label img {
+    padding-top: 20px;
+}
+
+.image-zoom + label {
+    cursor: pointer;
+}
