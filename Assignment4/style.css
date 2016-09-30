@@ -99,7 +99,6 @@ main {
     }
 
     main li a {
-        /*color: #c0cdd1;*/
         color: #ecf0f1;
     }
 
@@ -125,4 +124,37 @@ pre {
     padding-left: 20px;
     background: #404040;
     color: #ecf0f1;
+}
+
+/* Image Lightbox */
+
+.noscroll {
+  overflow: hidden;
+}
+
+.image-zoom {
+    display: none;
+}
+
+.lightbox {
+    display: none;
+
+    position: fixed;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	top: 0;
+	left: 0;
+    background: rgba(0,0,0,0.8);
+}
+
+.lightbox img {
+	max-width: 90%;
+	max-height: 80%;
+	margin-top: 2%;
+}
+
+.image-zoom:checked + label > .lightbox {
+    display: block !important;
 }
