@@ -1,0 +1,128 @@
+* {
+/* Ignore browser defualts for margins and padding */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    font-family: 'VT323';
+    font-size: 2em;
+    background-color: #333333;
+    color: #ecf0f1;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+nav {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    background-color: #333333;
+}
+
+nav {
+    height: 50px;
+    border-bottom: 3px dashed; /* Styled line at bottom of nav bar */
+}
+
+    nav a:hover {
+        border-bottom: 2px solid;
+    }
+
+footer {
+    border-top: 3px solid; /* Styled line at top of the footer */
+    width: 100%;
+    background-color: #333333;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    font-size: 30px;
+    min-width: 100%
+}
+
+footer ul,
+nav ul {
+    display: flex; /* Flex makes list horizontal. */
+    list-style: none;
+}
+
+footer a,
+nav a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+nav div.container,
+footer div.container {
+    /* Container used in nav bar and footer. */
+    width: 95%; /* Change width to alter left/right margins for nav bar. */
+    margin: auto;
+}
+
+nav div.right,
+footer div.right {
+    /* Right side of nav bar/footer. */
+    float: right;
+}
+
+nav div.left,
+footer div.left {
+    /* Left side of nav bar/footer. */
+    float: left;
+}
+
+main {
+    /* Put some space between the main and the nav/footer. */
+    padding-top: 50px;
+    padding-bottom:50px;
+    width: 80%; /* Change width to alter left/right margins of main body. */
+    margin: 0 auto;
+    flex: 1;
+}
+
+    main h3 {
+        border-bottom-style: solid;
+        margin-bottom: 30px;
+    }
+
+    main ul {
+        list-style-type: square;
+    }
+
+    main ul, main ol {
+        margin-left: 50px;
+    }
+
+    main li a {
+        /*color: #c0cdd1;*/
+        color: #ecf0f1;
+    }
+
+    main div.row {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    main div.row-item {
+        flex: auto;
+        width: 300px;
+        padding-bottom: 50px;
+    }
+
+ /* Terminal Highlighting */
+
+pre {
+    font-family: 'VT323' !important;
+    font-size: 1.5em !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    background: #404040;
+    color: #ecf0f1;
+}

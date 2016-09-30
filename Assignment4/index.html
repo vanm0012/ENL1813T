@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Process Description Assignment for ENL1813T">
+    <meta name="author" content="tryton-vanmeer">
+    <title>Home Media Server Guide</title>
+    <!-- CSS -->
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=VT323' rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://necolas.github.io/normalize.css/4.1.1/normalize.css" rel="stylesheet">
+  </head>
+  <body>
+
+      <nav>
+          <div class="container">
+              <div class="left">
+                  <h3>Process Description Assignment</h3>
+              </div>
+              <div class="right">
+                  <h3>Home Media Server Guide</h3>
+              </div>
+          </div>
+      </nav>
+
+      <main >
+
+          <h3>Notes Before Starting</h3>
+          <ul>
+              <li>Plex Media Server will be referred as PMS</li>
+              <li>It is recomended you have Linux command line experience</li>
+              <li>Have an installation of Ubuntu Server</li>
+              <li>It is assumed you will be accessing your server though a SSH session</li>
+              <li>Ubuntu Server 16.04 will be used in this demostration</li>
+          </ul>
+
+          <br><br><br>
+
+          <h3>File Management</h3>
+          <ul>
+              <li>Before setting up PMS, Plex needs to be able to read our media files</li>
+              <ul>
+                  <li>For folders, we want permissions set to 775</li>
+                  <li>For files, we want permissions set to 664</li>
+              </ul>
+          </ul>
+          <br>
+          <pre>$ chmod 775 media_folder<br>$ chmod 664 media_folder/media_file</pre>
+          <br>
+          <ul>
+              <li>Plex will also automatically name content by scanning the filename</li>
+              <li>So to ensure accurate information, it is important to properly name files</li>
+              <li>You can find information on naming
+                  <a href="https://support.plex.tv/hc/en-us/categories/200028098-Media-Preparation">here</a>
+              </li>
+              <ul>
+                  <li>For example, a movie file: "Movie Name (release year).ext"</li>
+              </ul>
+          </ul>
+
+          <br><br><br>
+
+          <h3>Installing Plex Media Server</h3>
+          <ol>
+              <li>To install PMS you will need to download the DEB file from their website</li>
+              <li>Go to the <a href="https://www.plex.tv/downloads/">Plex Downloads Page</a></li>
+              <li>Click the "DOWNLOAD button"</li>
+              <li>Choose Linux from the "Choose your platform" drop-down menu</li>
+              <li>Click Download</li>
+              <li>Right-click Ubuntu (64/32-bit depending on your servers artitecture) and click "copy link address" in your browsers context menu.
+              This URL wil be referred as $PLEX_DL_URL</li>
+              <li>Now, in the SSH session of your server, enter these following commands</li>
+              <ol>
+                  <li>Download the DEB file to the server using wget. We are going to paste the URL from before</li>
+                  <br>
+                  <pre>$ wget $PLEX_DL_URL<br>$ ls<br>PLEX.deb</pre>
+                  <li>Install the DEB file using dpkg</li>
+                  <br>
+                  <pre># dpkg -i PLEX.deb</pre>
+              </ol>
+          </ol>
+
+          <br><br><br>
+
+          <h3>Setting Plex Media Server Up</h3>
+          <ol>
+              <li>First, navigate to the web interface of PMS</li>
+              <ul>
+                  <li>This will be "http://&lt;server-ip&gt;:32400/web"</li>
+                  <li>replace "&lt;server-ip&gt;" with the ip address of your server</li>
+              </ul>
+              <li>You will be prompted with a log in screen</li>
+              <ul>
+                  <li>If you wish to create an account, do so here</li>
+                  <li>If you wish not to create an account, you can click
+                      "what's this" in the bottom and continue to set up</li>
+              </ul>
+          </ol>
+
+          <br><br><br>
+
+          <h3>Adding Libraries</h3>
+          <ol>
+            <li>Click the "Add Library" option from the side pane</li>
+            <li>Select library type. For our example, we will create a movie library</li>
+            <li>Enter a name and then click next</li>
+            <li>Browse for the folder where the media is stored or enter a path</li>
+            <li>Click "ADD LIBRARY"</li>
+            <ul>
+                <li>Plex will now scan for content</li>
+            </ul>
+          </ol>
+          <br>
+          <ul>
+              <li>The details of any item can be edited if not accurate.</li>
+              <ol>
+                  <li>To do this, click the item you wish to edit</li>
+                  <li>Then click the edit button on the left</li>
+              </ol>
+          </ul>
+
+      </main>
+
+      <footer>
+          <div class="container">
+              <div class="left">
+                  ENL1813T - Assignment 4
+              </div>
+              <div class="right">
+                  <span>Copyright (2016) Tryton Van Meer</span>
+              </div>
+          </div>
+      </footer>
+
+  </body>
+</html>
